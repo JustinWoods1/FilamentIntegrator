@@ -3,8 +3,8 @@ import RPi.GPIO as GPIO
 from time import sleep
 
 ## add your servo BOARD PIN number ##
-servo_pinL = 18
-servo_pinR = 22
+servo_pinL = 11
+servo_pinR = 13
 GPIO.setmode(GPIO.BOARD)
 GPIO.setup(servo_pinR, GPIO.OUT)
 GPIO.setup(servo_pinL, GPIO.OUT)
@@ -25,7 +25,9 @@ try:
  #   for dc in range(9,11,1):
 #      print("i= %d" %i)
     for dc in range(1,100,1):
-      pwmL.ChangeDutyCycle(10.3+(dc*0.0015))
+
+
+   pwmL.ChangeDutyCycle(10.3+(dc*0.0015))
       pwmR.ChangeDutyCycle(5-(dc*0.0015))
      # pwmR.ChangeDutyCycle((dc-i))
      # pwmL.ChangeDutyCycle(dc)
